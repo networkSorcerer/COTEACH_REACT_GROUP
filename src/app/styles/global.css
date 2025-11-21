@@ -1,0 +1,153 @@
+/* Global theme: subtle, tasteful, Bootstrap-aligned */
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Nanum+Pen+Script&display=swap');
+
+:root {
+  --bg: #f9fafb;
+  --panel: #ffffff;
+  --text: #0f172a; /* slate-900 */
+  --muted: #6b7280; /* gray-500 */
+  --border: #e5e7eb; /* gray-200 */
+  --accent: #0d6efd; /* bootstrap primary */
+  --radius: 12px;
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  background:
+    linear-gradient(135deg,
+      rgba(249, 168, 212, 0.6),  /* soft pink */
+      rgba(147, 197, 253, 0.6)   /* soft blue */
+    ),
+    radial-gradient(1400px 900px at 50% 40%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.98) 60%),
+    var(--bg);
+  color: var(--text);
+  font-family: 'Gamja Flower', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+p { color: var(--text); }
+.text-muted { color: var(--muted) !important; }
+
+/* Panels and cards */
+.panel {
+  background: var(--panel);
+  border-radius: var(--radius);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+  border-top: 3px solid rgba(248, 113, 113, 0.65);
+}
+
+.panel.panel-soft-rainbow {
+  border-top: 3px solid transparent;
+  background:
+    linear-gradient(120deg, #f9a8d4, #f97373, #facc15, #4ade80, #22c55e, #38bdf8, #a855f7) border-box,
+    var(--panel) padding-box;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+}
+
+/* Navbar polish */
+.app-navbar {
+  background: rgba(255,255,255,0.9) !important;
+  backdrop-filter: saturate(1.1) blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+
+/* App brand: text-only, slightly emphasized */
+.app-navbar-brand {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(90deg, #f97373, #fbbf24, #34d399, #60a5fa, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  font-size: 1.2rem;
+}
+
+.app-navbar-brand:hover {
+  text-decoration: none;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: var(--accent) !important;
+}
+
+/* Content spacing */
+.app-content {
+  max-width: 960px;
+}
+
+/* Buttons & inputs */
+.btn {
+  border-radius: 999px;
+  font-weight: 600;
+  padding-inline: 1.1rem;
+  padding-block: 0.45rem;
+  font-size: 0.95rem;
+  border-width: 1px;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12) inset;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #93c5fd, #818cf8);
+  border-color: #818cf8;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #60a5fa, #6366f1);
+  border-color: #6366f1;
+}
+
+.btn-outline-primary {
+  color: #6366f1;
+  background-color: rgba(239, 246, 255, 0.7);
+  border-color: #c7d2fe;
+}
+
+.btn-outline-primary:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, #60a5fa, #6366f1);
+  border-color: #6366f1;
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+.btn-secondary:hover {
+  background: #d4d4d8;
+  border-color: #a1a1aa;
+}
+
+.form-control { border-radius: 10px; }
+
+/* React DatePicker alignment with theme */
+.react-datepicker-wrapper .form-control {
+  text-align: center;
+  border-color: var(--border);
+}
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--accent) !important;
+}
+
+/* Utility spacers */
+.gap-1 { gap: .25rem; }
+.gap-2 { gap: .5rem; }
+.gap-3 { gap: 1rem; }
+

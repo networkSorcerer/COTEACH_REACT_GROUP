@@ -1,0 +1,101 @@
+ .diaryCreate-form {
+  max-width: 480px;
+}
+
+.diaryCreate {
+  color: var(--card-text);
+}
+
+.diaryCreate-card {
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  position: relative;
+}
+
+.diaryCreate-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.diaryCreate-mood {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.diaryCreate-mood .emoji {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.diaryCreate-mood .label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.diaryCreate-form .form-label {
+  font-weight: 600;
+  color: var(--card-text);
+}
+
+.diaryCreate-form .form-control {
+  border-radius: 10px;
+  border-color: #e5e7eb;
+  background: #fff;
+  color: var(--card-text);
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.diaryCreate-form .form-control::placeholder {
+  color: #9ca3af;
+}
+
+.diaryCreate-form .form-control:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+}
+
+.diaryCreate-actions {
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+@media (max-width: 640px) {
+  .diaryCreate-card { padding: 12px; }
+}
+
+/* DatePicker styles */
+.diaryCreate-date .form-control {
+  text-align: center;
+}
+.diaryCreate-date .react-datepicker-wrapper,
+.diaryCreate-date .react-datepicker__input-container {
+  width: 100%;
+}
+.diaryCreate-date .react-datepicker-popper {
+  z-index: 10;
+}
+
+/* Subtle section spacing */
+.diaryCreate-form .mb-3:not(:last-of-type) {
+  margin-bottom: 12px !important;
+}
+
+/* Micro interactions */
+.diaryCreate-card:hover {
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  transition: box-shadow .18s ease;
+}

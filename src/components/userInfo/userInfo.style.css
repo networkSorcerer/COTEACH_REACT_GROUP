@@ -1,0 +1,62 @@
+.user-info-box {
+  color: #1f2933;
+  position: absolute;
+  background-color: #ffffff;
+  top: 5px;
+  right: 0;
+  z-index: 9998;
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(209, 213, 219, 0.8);
+}
+
+.user-profile {
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  z-index: 9999;
+  padding: 1.7rem 3.5rem;
+}
+.profileManage,
+.profileAdd {
+  font-size: 12px;
+}
+.profileManage p,
+.profileAdd p {
+  margin: 0.5rem 0;
+}
+.profileManage {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+.profile-img {
+  width: 35%;
+}
+
+.user-profile p:first-of-type {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #111827;
+  margin-bottom: 0.1rem;
+}
+
+.user-profile p:nth-of-type(2) {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+@media (max-width: 576px) {
+  .user-profile {
+    padding: 1rem 1rem;
+  }
+  .user-profile p{
+    font-size: 1rem;
+  }
+  .profile-img {
+    width: 25% !important;
+  }
+  .profile-btn{
+    padding: 0.2rem;
+    font-size: 0.8rem;
+  }
+}

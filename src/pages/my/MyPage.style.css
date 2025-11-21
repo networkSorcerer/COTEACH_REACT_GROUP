@@ -1,0 +1,108 @@
+.my-wrap {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.my-avatar {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  box-shadow: inset 0 0 0 1px #e5e7eb;
+}
+.my-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.my-avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 36px;
+  color: #9ca3af;
+}
+.my-avatar-add {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #111;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.my-avatar-add:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.my-graph {
+  width: 100%;
+  overflow-x: auto;
+}
+.my-graph svg {
+  height: 180px;
+}
+.my-graph .label {
+  font-size: 10px;
+  fill: #6b7280;
+}
+.my-graph .value {
+  font-size: 12px;
+  fill: #374151;
+  font-weight: 700;
+}
+.my-graph .bar {
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.my-graph .bar-group {
+  cursor: pointer;
+}
+.my-graph .bar-group:hover .bar {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+.my-graph .bar-group:hover .label,
+.my-graph .bar-group:hover .value {
+  fill: #111827;
+}
+
+/* tooltip */
+.my-tooltip {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(17, 24, 39, 0.95);
+  color: #fff;
+  font-size: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  transform: translate(-50%, -110%);
+  white-space: nowrap;
+}
+
+/* mood colors aligned with list */
+.bar-very-good {
+  fill: #6cc08e;
+}
+.bar-good {
+  fill: #8fc970;
+}
+.bar-so-so {
+  fill: #e9b80f;
+}
+.bar-bad {
+  fill: #ea7430;
+}
+.bar-awful {
+  fill: #e64b52;
+}
+
