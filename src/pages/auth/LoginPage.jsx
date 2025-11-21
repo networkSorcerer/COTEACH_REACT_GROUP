@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useUserStore } from "../../app/store/auth";
-import UserInfo from "../../components/UserInfo/UserInfo";
+import UserInfo from "../../components/userInfo/UserInfo";
 import GoogleLoginButton from "../../components/common/GoogleLoginButton";
 
 const LoginPage = () => {
@@ -21,7 +21,7 @@ const LoginPage = () => {
   };
 
   const toggleInfo = () => {
-    setIsShowInfo(prevState => !prevState);
+    setIsShowInfo((prevState) => !prevState);
   };
 
   return (
