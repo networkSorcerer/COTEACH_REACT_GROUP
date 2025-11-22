@@ -1,4 +1,4 @@
-import { create } from "zustand" ;
+import { create } from "zustand";
 
 export const useUserStore = create((set) => ({
   userInfo: null,
@@ -9,5 +9,7 @@ export const useUserStore = create((set) => ({
   setIsLoggedIn: (login) => set({ isLoggedIn: login }),
 
   userName: "",
-  setUserName:(name)=> set({userName: name}),
+  setUserName: (name) => set({ userName: name }),
 }));
+
+//

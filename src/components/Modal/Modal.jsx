@@ -1,6 +1,7 @@
 import { Modal as BootstrapModal, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import useDiaryStore from "../../app/store/diary";
 
 const EmotionModal = (props) => {
   const [emotionResult, setEmotionResult] = useState("");
@@ -39,8 +40,15 @@ const EmotionModal = (props) => {
         "https://tobyyada.pythonanywhere.com/analyze",
         { text: props.diary.content }
       );
+
       setEmotionResult(data.result);
       setCount((prev) => prev + 1);
+
+      // ⬇⬇⬇ Zustand 저장
+      useDiaryStore.getState().updateDiary(props.diary.id, {
+        analysis: data.result,
+        analyzedAt: new Date().toISOString(), // 분석한 날짜 저장(Optional)
+      });
     } catch (err) {
       console.error(err);
       setEmotionResult("분석 중 오류가 발생했습니다.");

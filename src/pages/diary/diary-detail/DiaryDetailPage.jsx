@@ -3,7 +3,6 @@ import React from "react";
 import useDiaryStore from "../../../app/store/diary.js";
 import EmotionModal from "../../../components/Modal/Modal.jsx";
 import { Button } from "react-bootstrap";
-import { moodPalette } from "../../../lib/mood.js";
 
 export default function DiaryDetailPage() {
   const { id } = useParams();
