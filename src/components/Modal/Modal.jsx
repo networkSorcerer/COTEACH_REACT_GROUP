@@ -44,7 +44,6 @@ const EmotionModal = (props) => {
       setEmotionResult(data.result);
       setCount((prev) => prev + 1);
 
-      // ⬇⬇⬇ Zustand 저장
       useDiaryStore.getState().updateDiary(props.diary.id, {
         analysis: data.result,
         analyzedAt: new Date().toISOString(), // 분석한 날짜 저장(Optional)
@@ -57,7 +56,7 @@ const EmotionModal = (props) => {
     }
   };
 
-  const isLastTry = count >= MAX_DAILY - 1;
+  const isLastTry = count >= MAX_DAILY;
 
   return (
     <BootstrapModal
@@ -72,7 +71,7 @@ const EmotionModal = (props) => {
 
       <BootstrapModal.Body>
         <p className="emotion-modal-count text-muted small mb-3">
-          오늘 사용한 횟수: {count}/{MAX_DAILY - 1}
+          오늘 사용한 횟수: {count}/{MAX_DAILY}
         </p>
 
         {!emotionResult && !loading && (
@@ -100,7 +99,7 @@ const EmotionModal = (props) => {
         {emotionResult && (
           <>
             {/* 마지막 횟수 전까지 “다시 요청” 가능 */}
-            {!isLastTry && (
+            {count < MAX_DAILY && emotionResult && (
               <Button
                 variant="outline-primary"
                 onClick={analyzeEmotion}
