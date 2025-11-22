@@ -56,8 +56,6 @@ const EmotionModal = (props) => {
     }
   };
 
-  const isLastTry = count >= MAX_DAILY;
-
   return (
     <BootstrapModal
       {...props}
@@ -71,7 +69,7 @@ const EmotionModal = (props) => {
 
       <BootstrapModal.Body>
         <p className="emotion-modal-count text-muted small mb-3">
-          오늘 사용한 횟수: {count}/{MAX_DAILY}
+          오늘 사용한 횟수: {count}/{MAX_DAILY - 1}
         </p>
 
         {!emotionResult && !loading && (
